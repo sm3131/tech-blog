@@ -11,6 +11,7 @@ class User extends Model {
 
 }
 
+//Initialize User model and define the columns and constraints
 User.init(
     {
         id: {

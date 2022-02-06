@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Comment } = require('../../models');
 //const withAuth = require('../../utils/auth');
 
+//Route to GET all comments
 router.get('/', (req, res) => {
     Comment.findAll({
         attributes: [
@@ -35,6 +36,7 @@ router.get('/', (req, res) => {
 //     }
 //   });
 
+//Route to create a new comment
 router.post('/', (req, res) => {
     // check the session
       Comment.create({
@@ -69,6 +71,7 @@ router.post('/', (req, res) => {
 //         });
 // });
 
+//Route to delete a comment
 router.delete('/:id', (req, res) => {
     Comment.destroy({
         where: {

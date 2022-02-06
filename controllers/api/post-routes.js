@@ -4,7 +4,7 @@ const sequelize = require('../../config/connection');
 //const withAuth = require('../../utils/auth');
 //Don't forget to add withAuth to non get routes
 
-// get all posts
+// Route to GET all posts
 router.get('/', (req, res) => {
     Post.findAll({
         attributes: [
@@ -36,6 +36,7 @@ router.get('/', (req, res) => {
         });
 });
 
+//Route to GET one post by Id
 router.get('/:id', (req, res) => {
     Post.findOne({
         where: {
@@ -70,6 +71,7 @@ router.get('/:id', (req, res) => {
         });
 });
 
+//Route to create a new post
 router.post('/', (req, res) => {
     Post.create({
         title: req.body.title,
@@ -84,7 +86,7 @@ router.post('/', (req, res) => {
         });
 });
 
-//Update post title & text
+//Route to update post title & text
 router.put('/:id', (req, res) => {
     Post.update(
         {
@@ -110,6 +112,7 @@ router.put('/:id', (req, res) => {
         });
 });
 
+//Route to delete a post by Id
 router.delete('/:id', (req, res) => {
     Post.destroy({
         where: {
