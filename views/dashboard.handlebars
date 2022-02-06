@@ -1,5 +1,5 @@
 <section>
-    <h2>Create New Post</h2>
+    <h2 class="pt-3">Create A New Post</h2>
 
     <form class="">
         <div class="form-group title-form">
@@ -18,8 +18,8 @@
 
 {{#if posts.length}}
 <section>
-    <h2>Your Posts</h2>
-    <ol class="container">
+    <h2 class="user-post-head mt-2">Your Posts</h2>
+    <ol class="container user-posts">
         {{#each posts as |post|}}
         <li class="col-12">
             {{> post-info post}}

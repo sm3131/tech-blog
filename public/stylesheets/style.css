@@ -67,6 +67,14 @@ p {
     width: 20%;
 }
 
+.user-post-head {
+    margin-bottom: -10px;
+}
+
+.user-posts {
+    padding-left: 35px;
+}
+
 .edit-link {
     background-color: cadetblue;
     color:whitesmoke;
