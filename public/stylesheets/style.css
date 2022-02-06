@@ -30,6 +30,10 @@ footer {
     list-style-type: none;
 }
 
+p {
+    margin-bottom: 0rem;
+}
+
 .form-group {
     width: 30%;
 }
