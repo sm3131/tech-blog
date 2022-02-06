@@ -1,14 +1,12 @@
 <div class="row justify-content-between">
     <div class="mt-4 col-4">
-        <a href="/post/{{id}}" target="_blank">POST TITLE</a>
+        <a href="/post/{{id}}" target="_blank">{{title}}</a>
     </div>
-    <div class="mt-4 col-3">
-        <p class="date">UserName on 2/3/2022</p>
+    <div class="mt-4 col-5">
+        <p class="date">By {{user.username}} on {{created_at}}</p>
     </div>
 </div>
 <div class="col-12">
-    Post Content Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut nisi harum eveniet atque
-    quisquam fugiat distinctio quia maxime, illum, omnis nesciunt. Sapiente alias quae dolorem nam
-    consectetur ducimus reiciendis animi.
-    <a href="/post/{{id}}" class="d-block mt-2">COMMENTS (10)</a>
+    {{post_text}}
+    <a href="/post/{{id}}" class="d-block mt-2">{{comments.length}} Comment(s)</a>
 </div>
