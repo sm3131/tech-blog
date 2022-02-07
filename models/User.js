@@ -5,10 +5,20 @@ const bcrypt = require('bcrypt');
 // create our User model
 class User extends Model {
     // check password method
-    checkPassword(loginPw) {
-        return bcrypt.compareSync(loginPw, this.password);
-    }
+    // checkPassword(loginPw) {
+    //     return bcrypt.compareSync(loginPw, this.password);
+    // }
 
+    async checkPassword(loginPw) {
+        const match = await bcrypt.compare(loginPw, this.password)
+        if(match) {
+            console.log(match);
+            return match;
+        } else {
+            console.log(match);
+            return;
+        }
+    }
 }
 
 //Initialize User model and define the columns and constraints
