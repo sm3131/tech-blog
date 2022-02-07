@@ -54,6 +54,10 @@ p {
     width: 105px;
 }
 
+#logout:hover {
+    cursor:pointer;
+}
+
 .title-form {
     width: 50%;
 }
