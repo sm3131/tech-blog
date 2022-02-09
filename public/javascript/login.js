@@ -18,9 +18,11 @@ async function signupFormHandler(event) {
         if (response.ok) {
             console.log('success');
             //alert("Thanks for signing up, login to get started!");
-            document.location.replace('/dashboard')
+            //document.location.replace('/dashboard')
+            document.location.replace('/')
         } else {
-            alert(response.statusText);
+            //alert(response.statusText);
+            alert('Username already taken, please create a different username!');
         }
     }
 }
@@ -45,6 +47,7 @@ async function loginFormHandler(event) {
             document.location.replace('/')
         } else {
             alert(response.statusText);
+            alert('Incorrect username or password!')
         }
     }
 }

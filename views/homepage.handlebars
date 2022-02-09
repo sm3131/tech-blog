@@ -1,3 +1,8 @@
+{{#if loggedIn}}
+<h4 class="text-center mb-0 home-header">Thanks for signing-in to the Coding Tech Blog! If you want to create a post visit the Dashboard, if you would like to comment on other users' posts, click from the list below!</h4>
+{{else}}
+<h4 class="text-center mb-0 home-header">Welcome to the Coding Tech Blog! Navigate to the Login page to either login or sign-up to begin posting and commenting on other users' posts!</h4>
+{{/if}}
 <ul class="container post-list">
   {{#each posts as |post|}}
   <li class="col-12">
