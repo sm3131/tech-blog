@@ -17,6 +17,10 @@ a:hover {
     color:cadetblue;
 }
 
+.h2-text {
+    color:cadetblue;
+}
+
 main {
     background-color:honeydew;
     padding: 0px 15px 10px 15px;
@@ -34,8 +38,22 @@ footer {
     list-style-type: none;
 }
 
+.create-post {
+    color:cadetblue;
+    font-weight: bold;
+}
+
 p {
     margin-bottom: 0rem;
+}
+
+.post-title {
+    font-weight:bold;
+}
+
+.user-date {
+    color:navy;
+    font-weight: 500;
 }
 
 .form-group {
