@@ -1,0 +1,20 @@
+<h3>Your Comments</h3>
+<ul class="container post-list">
+    {{#each user.comments as |comment|}}
+    <li class="col-12">
+        <div class="row">
+            <div class="col-12">
+                {{comment.comment_text}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <p class="user-date">By {{@root.user.username}} on {{format_date comment.created_at}}</p>
+            </div>
+        </div>
+        <div>
+            <button class="delete-comment" type="button">Delete Comment</button>
+        </div>
+    </li>
+    {{/each}}
+</ul>

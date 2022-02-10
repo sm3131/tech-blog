@@ -26,14 +26,15 @@ router.get('/', (req, res) => {
             },
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['id', 'username']
             }
         ]
     })
         .then(dbPostData => {
             // serialize data before passing to template
             const posts = dbPostData.map(post => post.get({ plain: true }));
-            res.render('dashboard', { posts, loggedIn: true })
+            const user_id = posts[0].user.id;
+            res.render('dashboard', { posts, loggedIn: true, user_id })
         })
         .catch(err => {
             console.log(err);
@@ -81,5 +82,47 @@ router.get('/edit/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
+
+router.get('/comments/:id', (req, res) => {
+    User.findOne({
+        attributes: { exclude: ['password'] },
+        where: {
+            id: req.params.id
+        },
+        include: [
+            {
+                model: Post,
+                attributes: ['id', 'title', 'post_text', 'created_at']
+            },
+            {
+                model: Comment,
+                attributes: ['id', 'comment_text', 'created_at'],
+                include: {
+                    model: Post,
+                    attributes: ['title']
+                }
+            }
+        ]
+    })
+    .then(dbUserData => {
+        if (!dbUserData) {
+            res.status(404).json({ message: 'No user found with this id' });
+            return;
+        }
+        //res.json(dbUserData);
+        const user = dbUserData.get({ plain: true });
+        console.log(user);
+        // console.log(user.comments);
+        // pass data to template
+        res.render('user-comments', {
+            user,
+            loggedIn: true
+        });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+})
 
 module.exports = router;

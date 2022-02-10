@@ -19,6 +19,26 @@ router.get('/', (req, res) => {
         });
 });
 
+
+// router.get('/user', (req,res) => {
+//     Comment.findAll({
+//         where: {
+//             user_id: res.session.user_id
+//         },
+//         attributes: [
+//             'id',
+//             'comment_text',
+//             'user_id',
+//             'post_id'
+//         ]
+//     })
+//     .then(dbCommentData => res.json(dbCommentData))
+//     .catch(err => {
+//         console.log(err);
+//         res.status(500).json(err);
+//     });
+// })
+
 // router.post('/', withAuth, (req, res) => {
 //     // check the session
 //     if (req.session) {

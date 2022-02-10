@@ -139,3 +139,31 @@ p {
 .comment-form {
     padding-left: 12px;
 }
+
+.comment-btn {
+    font-size: 20px;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: rgb(46, 205, 211);
+    border-radius: 5px;
+    color: whitesmoke;
+    border:2px solid black;
+}
+
+.comment-btn:hover{
+    color:rgb(46, 205, 211);
+    background-color: whitesmoke;
+}
+
+.delete-comment {
+    margin-bottom: 10px;
+    background-color: rgb(46, 205, 211);
+    border-radius: 5px;
+    color: whitesmoke;
+    border:2px solid black;
+}
+
+.delete-comment:hover{
+    color:rgb(46, 205, 211);
+    background-color: whitesmoke;
+}
