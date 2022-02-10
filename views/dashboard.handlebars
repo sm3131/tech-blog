@@ -32,8 +32,10 @@
 </section>
 {{/if}}
 
+{{#if posts.length}}
 <div>
-    <a href="/dashboard/comments/{{user_id}}" class="comment-btn">View Your Comments</a>
+    <a href="/dashboard/comments/{{posts.[0].user.id}}" class="comment-btn">View Your Comments</a>
 </div>
+{{/if}}
 
 <script src="/javascript/add-post.js"></script>

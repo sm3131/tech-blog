@@ -1,4 +1,8 @@
+{{#if user.comments.length}}
 <h3>Your Comments</h3>
+{{else}}
+<h3>No Comments To Display</h3>
+{{/if}}
 <ul class="container post-list">
     {{#each user.comments as |comment|}}
     <li class="col-12">
