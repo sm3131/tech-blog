@@ -1,9 +1,8 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
-//const withAuth = require('../utils/auth');
+const withAuth = require('../utils/auth');
 
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
     Post.findAll({
         where: {
             // use the ID from the session
@@ -42,7 +41,7 @@ router.get('/', (req, res) => {
         });
 });
 
-router.get('/edit/:id', (req, res) => {
+router.get('/edit/:id', withAuth, (req, res) => {
     Post.findOne({
         where: {
             id: req.params.id
@@ -70,7 +69,7 @@ router.get('/edit/:id', (req, res) => {
             }
             // serialize the data
             const post = dbPostData.get({ plain: true });
-            console.log(post.title);
+
             // pass data to template
             res.render('edit-post', {
                 post,
@@ -112,8 +111,7 @@ router.get('/comments/:id', (req, res) => {
         }
         //res.json(dbUserData);
         const user = dbUserData.get({ plain: true });
-        console.log(user);
-        // console.log(user.comments);
+        
         // pass data to template
         res.render('user-comments', {
             user,

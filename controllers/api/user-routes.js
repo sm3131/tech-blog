@@ -69,6 +69,7 @@ router.post('/', (req, res) => {
         });
 });
 
+//Route to allow a user to login
 router.post('/login', (req, res) => {
     User.findOne({
         where: {
@@ -79,27 +80,9 @@ router.post('/login', (req, res) => {
             res.status(400).json({ message: 'No user with that username!' });
             return;
         }
-
         // Verify user
-        // const validPassword = dbUserData.checkPassword(req.body.password);
-        // console.log(validPassword);
-        // if (!validPassword) {
-        //     res.status(400).json({ message: 'Incorrect password!' });
-        //     return;
-        // }
-
-        // req.session.save(() => {
-        //     // declare session variables
-        //     req.session.user_id = dbUserData.id;
-        //     req.session.username = dbUserData.username;
-        //     req.session.loggedIn = true;
-
-        //     res.json({ user: dbUserData, message: 'You are now logged in!' });
-        // })
-
         dbUserData.checkPassword(req.body.password)
         .then(match => {
-            console.log(match);
         if (!match) {
             res.status(400).json({ message: 'Incorrect password!' });
             return;
@@ -117,7 +100,7 @@ router.post('/login', (req, res) => {
     });
 });
 
-
+//Route to allow the user to logout
 router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
         req.session.destroy(() => {

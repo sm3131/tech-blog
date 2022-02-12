@@ -12,7 +12,6 @@ class User extends Model {
     async checkPassword(loginPw) {
         const match = await bcrypt.compare(loginPw, this.password)
         if(match) {
-            console.log(match);
             return match;
         } else {
             console.log(match);
