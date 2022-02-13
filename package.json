@@ -12,7 +12,7 @@
     "url": "git+https://github.com/sm3131/tech-blog.git"
   },
   "author": "Sammi Moore",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/sm3131/tech-blog/issues"
   },
