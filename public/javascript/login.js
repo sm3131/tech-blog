@@ -17,11 +17,9 @@ async function signupFormHandler(event) {
         // check the response status
         if (response.ok) {
             console.log('success');
-            //alert("Thanks for signing up, login to get started!");
-            //document.location.replace('/dashboard')
             document.location.replace('/')
         } else {
-            //alert(response.statusText);
+            console.log(response.statusText);
             alert('Username already taken, please create a different username!');
         }
     }
