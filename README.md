@@ -34,7 +34,12 @@ If you would like to access the code for this project, please visit this [GitHub
 # Preview
 
 Below are screenshots of the Coding Tech Blog application:
-![Coding Tech Blog](assets/images/tech-blog.png)
+![Coding Tech Blog](assets/images/tech1.png)
+![Coding Tech Blog](assets/images/tech2.png)
+![Coding Tech Blog](assets/images/tech3.png)
+![Coding Tech Blog](assets/images/tech4.png)
+![Coding Tech Blog](assets/images/tech5.png)
+![Coding Tech Blog](assets/images/tech6.png)
 
 # Functionality
 
