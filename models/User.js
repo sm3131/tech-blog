@@ -10,7 +10,6 @@ class User extends Model {
         if(match) {
             return match;
         } else {
-            console.log(match);
             return;
         }
     }
